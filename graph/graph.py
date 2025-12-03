@@ -5,6 +5,7 @@ from graph.consts import RETRIEVE, WEBSEARCH, GENERATE, GRADE_DOCUMENTS
 from graph.nodes import generate, grade_documents, web_search, retrieve
 from graph.chain.answer_grader import answer_grader
 from graph.chain.hallucinatiob_grader import hallucination_grader
+from graph.chain.router import RouteQuery, question_router
 from graph.state import GraphState
 
 load_dotenv()
@@ -48,12 +49,32 @@ def grade_generation_grounded_in_documents_and_question(state: GraphState) -> st
         return "not supported"
 
 
+def route_question(state: GraphState) -> str:
+    print("---ROUTE QUESTION---")
+    question = state["question"]
+    source: RouteQuery = question_router.invoke({"question": question})
+    if source.datasource == WEBSEARCH:
+        print("---ROUTE QUESTION TO WEB SEARCH---")
+        return WEBSEARCH
+    elif source.datasource == "vectorstore":
+        print("---ROUTE QUESTION TO RAG---")
+        return RETRIEVE
+
+
 workflow = StateGraph(GraphState)
 
 workflow.add_node(RETRIEVE, retrieve)
 workflow.add_node(GRADE_DOCUMENTS, grade_documents)
 workflow.add_node(GENERATE, generate)
 workflow.add_node(WEBSEARCH, web_search)
+
+workflow.set_conditional_entry_point(
+    route_question,
+    {
+        WEBSEARCH: WEBSEARCH,
+        RETRIEVE: RETRIEVE,
+    },
+)
 
 workflow.set_entry_point(RETRIEVE)
 workflow.add_edge(RETRIEVE, GRADE_DOCUMENTS)
