@@ -52,3 +52,21 @@ We welcome contributions from the community! If you'd like to contribute to Adva
 Advanced RAG is released under the MIT License. See `LICENSE.txt` for details.
 
 Note: This README file provides an overview of the project's features, tech stack, and setup instructions. For more detailed information on individual components or implementation specifics, please refer to the corresponding documentation within the codebase.
+
+
+After comparing the 'Code Reality' with the 'Current README', I have identified some missing features that are not mentioned in the README. Here is a short '## ⚡ Recent Updates' section describing these missing features:
+
+## ⚡ Recent Updates
+### Hallucination Grading Mechanism
+The system uses a grading mechanism to assess whether the generated answer is grounded in facts or contains hallucinations.
+
+### Retrieval Grader
+A retrieval grader is implemented to check the relevance of retrieved documents to user questions. It uses a vector store to retrieve relevant documents related to agents, prompt engineering, and adversarial attacks.
+
+### Answer Grader
+An answer grader is used to assess whether an answer addresses or resolves a question. It gives a binary score 'yes' or 'no' to indicate whether the answer is relevant to the question.
+
+### Routing Mechanism
+The system uses a routing mechanism to route user queries to web search when necessary, and to vector store for questions related to agents, prompt engineering, and adversarial attacks.
+
+These features are not mentioned in the README, but they are present in the code.
