@@ -10,6 +10,7 @@ Advanced RAG (Reinforced Agent Generator) is an open-source project that leverag
 *   **Vector-Based Retrieval**: Advanced RAG utilizes a vector store to retrieve relevant documents related to agents, prompt engineering, and adversarial attacks. This retrieval process works by converting user queries into vectors that are then matched against the stored vectors in the vector store, allowing for efficient and accurate document retrieval.
 *   **LLM Generation with LLaMA and Ollama**: The system uses large language models (LLMs) to generate answers based on the retrieved documents. Both LLaMA and Ollama are utilized for generation tasks, enabling the system to leverage the strengths of each model.
 *   **Hallucination Grading with LLMs**: A grading mechanism is implemented to assess whether the generated answer is grounded in facts or contains hallucinations. This mechanism utilizes large language models (LLMs) to evaluate the generated answer and provide a score indicating its accuracy.
+*   **State Graph Workflow**: Advanced RAG employs a state graph workflow that includes nodes for retrieval, document grading, generation, and web search. This modular architecture facilitates efficient processing of user queries and ensures that relevant information is retrieved and utilized for generation.
 
 **Hallucination Grading with LLMs**
 --------------------------------
@@ -20,6 +21,8 @@ The system's hallucination grading mechanism utilizes large language models (LLM
 ------------------------
 
 Advanced RAG employs a state graph workflow that includes nodes for retrieval, document grading, generation, and web search. This modular architecture facilitates efficient processing of user queries and ensures that relevant information is retrieved and utilized for generation.
+
+The state graph workflow is implemented in the `graph/graph.py` file, which defines a `GraphState` class representing the state of the graph. The `graph/consts.py` file defines constants for different states in the graph.
 
 **Tech Stack**
 ---------------
@@ -52,6 +55,21 @@ We welcome contributions from the community! If you'd like to contribute to Adva
 2.  Create a new branch for your feature or bug fix.
 3.  Implement changes and write unit tests as necessary.
 4.  Submit a pull request with a clear description of your changes.
+
+**Vector-Based Retrieval Implementation**
+----------------------------------------
+
+The vector-based retrieval process is implemented in the `graph/chain/retrieval_grader.py` file, which defines a grader that uses an LLM to assess the relevance of retrieved documents.
+
+**LLM Generation with LLaMA and Ollama**
+-----------------------------------------
+
+The system uses large language models (LLMs) to generate answers based on the retrieved documents. Both LLaMA and Ollama are utilized for generation tasks, enabling the system to leverage the strengths of each model. The implementation details can be found in the `graph/chain/generation.py` file.
+
+**Hallucination Grading with LLMs**
+--------------------------------
+
+The hallucination grading mechanism is implemented using large language models (LLMs) to evaluate the generated answer and provide a score indicating its accuracy. The implementation details can be found in the `graph/chain/hallucination_grader.py` file.
 
 **License**
 ----------
