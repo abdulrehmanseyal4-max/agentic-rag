@@ -19,9 +19,7 @@ This project implements a graph-based workflow for generating answers to user qu
 --------------
 
 * `graph/chain/retrieval_grader.py`: A language model-based grader for evaluating the relevance of retrieved documents.
-* `graph/chain/hallucination_grader.py`: A language model-based grader for evaluating whether an LLM generation is grounded in facts.
-* `graph/chain/router.py`: A language model-based router for determining which data source to use based on the user question.
-* `ingestion.py`: A script for loading and processing documents from a vector store.
+*
 
 **Usage**
 -----
@@ -31,8 +29,6 @@ To run the workflow, simply execute the `app` function in `graph/graph.py`. This
 **Requirements**
 --------------
 
-* Python 3.8+
-* LangChain library
 * Ollama library
 
 **Contributing**
