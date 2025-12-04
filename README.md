@@ -10,8 +10,6 @@ Advanced RAG (Reinforced Agent Generator) is an open-source project that leverag
 *   **Vector-Based Retrieval**: Advanced RAG utilizes a vector store to retrieve relevant documents related to agents, prompt engineering, and adversarial attacks.
 *   **LLM Generation**: The system uses large language models (LLMs) to generate answers based on the retrieved documents.
 *   **Hallucination Grading**: A grading mechanism is implemented to assess whether the generated answer is grounded in facts or contains hallucinations.
-*   **Route Question**: The `route_question` function determines whether to route the user query to web search or RAG, enabling seamless integration with external search engines.
-*   **Retrieval Grader**: A retrieval grader is used to evaluate the relevance of retrieved documents, ensuring that only high-quality information is utilized for generation.
 
 **Hallucination Grading with LLMs**
 --------------------------------
@@ -29,7 +27,6 @@ Advanced RAG employs a state graph workflow that includes nodes for retrieval, d
 *   **Python 3.x**: The primary programming language used for development.
 *   **LangChain**: An open-source library for building conversational AI applications.
 *   **LLMs (Large Language Models)**: Utilized for generation and grading tasks, including LLaMA and Ollama.
-*   **Vector Store (Chroma)**: A vector store is used to retrieve relevant documents related to specific topics.
 
 **Getting Started**
 -------------------
