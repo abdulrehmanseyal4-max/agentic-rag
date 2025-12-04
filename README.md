@@ -52,3 +52,10 @@ We welcome contributions from the community! If you'd like to contribute to Adva
 Advanced RAG is released under the MIT License. See `LICENSE.txt` for details.
 
 Note: This README file provides an overview of the project's features, tech stack, and setup instructions. For more detailed information on individual components or implementation specifics, please refer to the corresponding documentation within the codebase.
+
+## ⚡ Recent Updates
+### **Hallucination Grading and Retrieval Mechanism**
+
+The codebase includes a hallucination grading mechanism that assesses whether the generated answer is grounded in facts or contains hallucinations. Additionally, it features a retrieval mechanism that routes user queries to web search when necessary and utilizes a vector store to retrieve relevant documents related to specific topics.
+
+This feature is missing from the README file, which only mentions the key features of the project but does not provide detailed information on the implementation specifics.
