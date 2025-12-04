@@ -7,9 +7,9 @@ Advanced RAG (Reinforced Agent Generator) is an open-source project that leverag
 -----------------
 
 *   **Web Search Integration**: The system can route user queries to web search when necessary.
-*   **Vector-Based Retrieval**: Advanced RAG utilizes a vector store to retrieve relevant documents related to agents, prompt engineering, and adversarial attacks.
-*   **LLM Generation**: The system uses large language models (LLMs) to generate answers based on the retrieved documents.
-*   **Hallucination Grading**: A grading mechanism is implemented to assess whether the generated answer is grounded in facts or contains hallucinations.
+*   **Vector-Based Retrieval**: Advanced RAG utilizes a vector store to retrieve relevant documents related to agents, prompt engineering, and adversarial attacks. This retrieval process works by converting user queries into vectors that are then matched against the stored vectors in the vector store, allowing for efficient and accurate document retrieval.
+*   **LLM Generation with LLaMA and Ollama**: The system uses large language models (LLMs) to generate answers based on the retrieved documents. Both LLaMA and Ollama are utilized for generation tasks, enabling the system to leverage the strengths of each model.
+*   **Hallucination Grading with LLMs**: A grading mechanism is implemented to assess whether the generated answer is grounded in facts or contains hallucinations. This mechanism utilizes large language models (LLMs) to evaluate the generated answer and provide a score indicating its accuracy.
 
 **Hallucination Grading with LLMs**
 --------------------------------
